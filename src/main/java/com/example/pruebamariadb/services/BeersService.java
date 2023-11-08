@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class BeersService {
@@ -16,4 +17,9 @@ public class BeersService {
     public ArrayList<BeersModel> getBeers() {
         return (ArrayList<BeersModel>) beersRepository.findAll();
     }
+
+    public Optional<BeersModel> getBeerById(Long id) {
+        return beersRepository.findById(id);
+    }
+
 }

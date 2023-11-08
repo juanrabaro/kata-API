@@ -1,4 +1,9 @@
 package com.example.pruebamariadb.repositories;
 
-public class ICategoriesRepository {
+import com.example.pruebamariadb.models.CategoriesModel;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ICategoriesRepository extends CrudRepository<CategoriesModel, Long> {
 }

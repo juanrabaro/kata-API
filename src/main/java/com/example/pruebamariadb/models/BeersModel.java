@@ -25,13 +25,13 @@ public class BeersModel {
     @Column(nullable = false, length = 11)
     Long style_id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "0")
     Float abv;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "0")
     Float ibu;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "0")
     Float srm;
 
     @Column(nullable = false, length = 40)
@@ -46,7 +46,7 @@ public class BeersModel {
     @Column(nullable = false, length = 11)
     Long add_user;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "0000-00-00 00:00:00")
     Date last_mod;
 
     public Long getId() {
