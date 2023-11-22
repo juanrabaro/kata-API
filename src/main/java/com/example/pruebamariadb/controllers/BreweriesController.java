@@ -23,7 +23,7 @@ public class BreweriesController {
 
     @RequestMapping("/brewerie/{id}")
     public Optional<BreweriesModel> getBreweriesById(@PathVariable Long id) {
-        return breweriesService.getBreweriesById(id);
+        return Optional.ofNullable(breweriesService.getBreweriesById(id));
     }
 
 }

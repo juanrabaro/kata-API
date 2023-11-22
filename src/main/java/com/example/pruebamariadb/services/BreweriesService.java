@@ -18,7 +18,8 @@ public class BreweriesService {
         return (ArrayList<BreweriesModel>) breweriesRepository.findAll();
     }
 
-    public Optional<BreweriesModel> getBreweriesById(Long id) {
-        return breweriesRepository.findById(id);
+    public BreweriesModel getBreweriesById(Long id) {
+        return breweriesRepository.findById(id)
+                .orElseThrow(() -> new Error("Brewerie no encontrado con id: " + id));
     }
 }

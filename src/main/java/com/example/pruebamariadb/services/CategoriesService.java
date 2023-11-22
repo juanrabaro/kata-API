@@ -1,8 +1,6 @@
 package com.example.pruebamariadb.services;
 
-import com.example.pruebamariadb.models.BreweriesModel;
 import com.example.pruebamariadb.models.CategoriesModel;
-import com.example.pruebamariadb.repositories.IBreweriesRepository;
 import com.example.pruebamariadb.repositories.ICategoriesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,11 +14,12 @@ public class CategoriesService {
     @Autowired
     ICategoriesRepository categoriesRepository;
 
-    public ArrayList<CategoriesModel> getBreweries() {
+    public ArrayList<CategoriesModel> getCategories() {
         return (ArrayList<CategoriesModel>) categoriesRepository.findAll();
     }
 
-    public Optional<BreweriesModel> getBreweriesById(Long id) {
-        return categoriesRepository.findById(id);
+    public CategoriesModel getCategoriesById(Long id) {
+        return categoriesRepository.findById(id)
+                .orElseThrow(() -> new Error("Category no encontrado con id: " + id));
     }
 }
