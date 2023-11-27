@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Optional;
 
-import static com.example.pruebamariadb.models.BeersModel.getName;
 
 @Service
 public class BeersService {
@@ -24,9 +23,10 @@ public class BeersService {
 
     public BeersDTO getBeerById(Long id) {
         if (beersRepository.existsById(id)) {
-            System.out.println("El valor del nombre: " + BeersModel.getName());
             System.out.println("El id es: " + id);
-            return new BeersDTO(BeersModel.getName());
+            final Optional<BeersModel> beerEncontrada = beersRepository.findById(id);
+            final BeersModel beersModel = beerEncontrada.get();
+            return new BeersDTO(beersModel.getName());
             //return beersRepository.findById(id);
         } else {
             throw new EntityNotFoundException("No se encontró un elemento con el ID " + id);
@@ -48,7 +48,7 @@ public class BeersService {
                 .orElseThrow(() -> new Error("Beer no encontrado con id: " + id));
 
         oldBeer.setBrewery_id(newBeer.getBrewery_id());
-        oldBeer.setName(getName());
+        oldBeer.setName(newBeer.getName());
         oldBeer.setCat_id(newBeer.getCat_id());
         oldBeer.setStyle_id(newBeer.getStyle_id());
         oldBeer.setAbv(newBeer.getAbv());
