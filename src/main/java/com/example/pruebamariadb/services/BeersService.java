@@ -1,12 +1,16 @@
 package com.example.pruebamariadb.services;
 
+import com.example.pruebamariadb.dto.BeersDTO;
 import com.example.pruebamariadb.models.BeersModel;
 import com.example.pruebamariadb.repositories.IBeersRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Optional;
+
+import static com.example.pruebamariadb.models.BeersModel.getName;
 
 @Service
 public class BeersService {
@@ -18,11 +22,15 @@ public class BeersService {
         return (ArrayList<BeersModel>) beersRepository.findAll();
     }
 
-    public Optional<BeersModel> getBeerById(Long id) {
+    public BeersDTO getBeerById(Long id) {
         if (beersRepository.existsById(id)) {
-            return beersRepository.findById(id);
+            System.out.println("El valor del nombre: " + BeersModel.getName());
+            System.out.println("El id es: " + id);
+            return new BeersDTO(BeersModel.getName());
+            //return beersRepository.findById(id);
         } else {
-            throw new RuntimeException("No se encontró un elemento con el ID especificado.");
+            throw new EntityNotFoundException("No se encontró un elemento con el ID " + id);
+            //throw new RuntimeException("No se encontró un elemento con el ID especificado.");
         }
     }
 
@@ -40,7 +48,7 @@ public class BeersService {
                 .orElseThrow(() -> new Error("Beer no encontrado con id: " + id));
 
         oldBeer.setBrewery_id(newBeer.getBrewery_id());
-        oldBeer.setName(newBeer.getName());
+        oldBeer.setName(getName());
         oldBeer.setCat_id(newBeer.getCat_id());
         oldBeer.setStyle_id(newBeer.getStyle_id());
         oldBeer.setAbv(newBeer.getAbv());

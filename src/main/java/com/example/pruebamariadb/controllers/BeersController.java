@@ -1,5 +1,6 @@
 package com.example.pruebamariadb.controllers;
 
+import com.example.pruebamariadb.dto.BeersDTO;
 import com.example.pruebamariadb.models.BeersModel;
 import com.example.pruebamariadb.services.BeersService;
 import com.sun.net.httpserver.Authenticator;
@@ -22,7 +23,7 @@ public class BeersController {
     }
 
     @GetMapping("beer/{id}")
-    public Optional<BeersModel> getBeerById(@PathVariable Long id) {
+    public BeersDTO getBeerById(@PathVariable Long id) {
         return beersService.getBeerById(id);
     }
 

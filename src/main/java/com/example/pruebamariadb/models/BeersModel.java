@@ -17,7 +17,7 @@ public class BeersModel {
     Long brewery_id;
 
     @Column(nullable = false, length = 255)
-    String name;
+    private static String name;
 
     @Column(nullable = false, length = 11)
     Long cat_id;
@@ -65,12 +65,12 @@ public class BeersModel {
         this.brewery_id = brewery_id;
     }
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        BeersModel.name = name;
     }
 
     public Long getCat_id() {
