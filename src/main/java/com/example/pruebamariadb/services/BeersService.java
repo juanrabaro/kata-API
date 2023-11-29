@@ -5,6 +5,8 @@ import com.example.pruebamariadb.models.BeersModel;
 import com.example.pruebamariadb.repositories.IBeersRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,13 +19,12 @@ public class BeersService {
     @Autowired
     IBeersRepository beersRepository;
 
-    public ArrayList<BeersModel> getBeers() {
-        return (ArrayList<BeersModel>) beersRepository.findAll();
+    public Page<BeersModel> getBeers(Pageable pageable) {
+        return beersRepository.findAll(pageable);
     }
 
     public BeersDTO getBeerById(Long id) {
         if (beersRepository.existsById(id)) {
-            System.out.println("El id es: " + id);
             final Optional<BeersModel> beerEncontrada = beersRepository.findById(id);
             final BeersModel beersModel = beerEncontrada.get();
             return new BeersDTO(beersModel.getName());

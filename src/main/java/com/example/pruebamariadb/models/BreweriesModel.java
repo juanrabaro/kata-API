@@ -11,46 +11,46 @@ public class BreweriesModel {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, length = 21)
-    Long id;
+    private Long id;
 
     @Column(nullable = false, length = 255)
-    String name;
+    private String name;
 
     @Column(nullable = false, length = 255)
-    String addres1;
+    private String addres1;
 
     @Column(nullable = false, length = 255)
-    String addres2;
+    private String addres2;
 
     @Column(nullable = false, length = 255)
-    String city;
+    private String city;
 
     @Column(nullable = false, length = 255)
-    String state;
+    private String state;
 
     @Column(nullable = false, length = 25)
-    String code;
+    private String code;
 
     @Column(nullable = false, length = 255)
-    String country;
+    private String country;
 
     @Column(nullable = false, length = 50)
-    String phone;
+    private String phone;
 
     @Column(nullable = false, length = 255)
-    String website;
+    private String website;
 
     @Column(nullable = false, length = 255)
-    String filepath;
+    private String filepath;
 
     @Column(nullable = false)
-    String descript;
+    private String descript;
 
     @Column(nullable = false, length = 11, columnDefinition = "0")
-    Integer add_user;
+    private Integer add_user;
 
     @Column(nullable = false, columnDefinition = "0000-00-00 00:00:00")
-    Date last_mod;
+    private Date last_mod;
 
     public Long getId() {
         return id;

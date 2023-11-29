@@ -5,6 +5,9 @@ import com.example.pruebamariadb.models.BeersModel;
 import com.example.pruebamariadb.services.BeersService;
 import com.sun.net.httpserver.Authenticator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,8 +21,8 @@ public class BeersController {
     BeersService beersService;
 
     @GetMapping("/beers")
-    public ArrayList<BeersModel> getBeers() {
-        return beersService.getBeers();
+    public Page<BeersModel> getBeers(@PageableDefault(page = 0, size = 5) Pageable pageable) {
+        return beersService.getBeers(pageable);
     }
 
     @GetMapping("beer/{id}")

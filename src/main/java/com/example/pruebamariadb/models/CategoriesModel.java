@@ -11,13 +11,13 @@ public class CategoriesModel {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, length = 11)
-    Long id;
+    private Long id;
 
     @Column(nullable = false, length = 255)
-    String cat_name;
+    private String cat_name;
 
     @Column(nullable = false, columnDefinition = "0000-00-00 00:00:00")
-    Date last_mod;
+    private Date last_mod;
 
     public Long getId() {
         return id;
