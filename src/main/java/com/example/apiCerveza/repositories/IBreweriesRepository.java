@@ -1,8 +1,7 @@
-package com.example.pruebamariadb.repositories;
+package com.example.apiCerveza.repositories;
 
-import com.example.pruebamariadb.models.BreweriesModel;
+import com.example.apiCerveza.models.BreweriesModel;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository

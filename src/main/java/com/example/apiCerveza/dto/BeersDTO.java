@@ -25,7 +25,7 @@ public class BeersDTO {
     private String createdBy;
 }
 */
-package com.example.pruebamariadb.dto;
+package com.example.apiCerveza.dto;
 
 import java.io.Serializable;
 

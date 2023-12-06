@@ -1,18 +1,14 @@
-package com.example.pruebamariadb.controllers;
+package com.example.apiCerveza.controllers;
 
-import com.example.pruebamariadb.dto.BeersDTO;
-import com.example.pruebamariadb.models.BeersModel;
-import com.example.pruebamariadb.services.BeersService;
-import com.sun.net.httpserver.Authenticator;
+import com.example.apiCerveza.dto.BeersDTO;
+import com.example.apiCerveza.models.BeersModel;
+import com.example.apiCerveza.services.BeersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.Optional;
 
 @RestController
 public class BeersController {

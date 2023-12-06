@@ -1,4 +1,4 @@
-package com.example.pruebamariadb.dto;
+package com.example.apiCerveza.dto;
 
 import java.io.Serializable;
 

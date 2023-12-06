@@ -1,4 +1,4 @@
-package com.example.pruebamariadb.models;
+package com.example.apiCerveza.models;
 
 import jakarta.persistence.*;
 

@@ -1,15 +1,14 @@
-package com.example.pruebamariadb.services;
+package com.example.apiCerveza.services;
 
-import com.example.pruebamariadb.dto.BreweriesDTO;
-import com.example.pruebamariadb.models.BreweriesModel;
-import com.example.pruebamariadb.repositories.IBreweriesRepository;
+import com.example.apiCerveza.dto.BreweriesDTO;
+import com.example.apiCerveza.models.BreweriesModel;
+import com.example.apiCerveza.repositories.IBreweriesRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
 @Service

@@ -1,13 +1,13 @@
-package com.example.pruebamariadb;
+package com.example.apiCerveza;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PruebamariadbApplication {
+public class ApiCervezaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PruebamariadbApplication.class, args);
+		SpringApplication.run(ApiCervezaApplication.class, args);
 	}
 
 }

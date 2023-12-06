@@ -1,23 +1,20 @@
-package com.example.pruebamariadb.models;
+package com.example.apiCerveza.models;
 
 import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
-@Table(name = "styles")
-public class StylesModel {
+@Table(name = "categories")
+public class CategoriesModel {
 
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, length = 11)
     private Long id;
 
-    @Column(nullable = false, length = 11, columnDefinition = "0")
-    private Integer cat_id;
-
     @Column(nullable = false, length = 255)
-    private String style_name;
+    private String cat_name;
 
     @Column(nullable = false, columnDefinition = "0000-00-00 00:00:00")
     private Date last_mod;
@@ -30,20 +27,12 @@ public class StylesModel {
         this.id = id;
     }
 
-    public Integer getCat_id() {
-        return cat_id;
+    public String getCat_name() {
+        return cat_name;
     }
 
-    public void setCat_id(Integer cat_id) {
-        this.cat_id = cat_id;
-    }
-
-    public String getStyle_name() {
-        return style_name;
-    }
-
-    public void setStyle_name(String style_name) {
-        this.style_name = style_name;
+    public void setCat_name(String cat_name) {
+        this.cat_name = cat_name;
     }
 
     public Date getLast_mod() {
